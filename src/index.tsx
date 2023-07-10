@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './components/app/app';
+import {Setting} from './const';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+
+const containerCity = ReactDOM.createRoot(
+  document.querySelector('cities__places-container') as HTMLElement
 );
 
-root.render(
+containerCity.render(
   <React.StrictMode>
-    <h1>Hello, World!</h1>
+    <App
+      cityName = {Setting.cityName}
+      placesCount = {Setting.placesCount}
+    />
   </React.StrictMode>
-);
+)
