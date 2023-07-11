@@ -1,13 +1,18 @@
 import MainPage from '../../pages/main';
 
-type AppMainPageProps = {
+type AppProps = {
   placesCount: number;
   cityName: string;
+  favoriteCount: number
 }
 
-function App({placesCount, cityName}: AppMainPageProps): JSX.Element {
+function App({placesCount, cityName, favoriteCount}: AppProps): JSX.Element {
   return (
-    <MainPage placesCount={placesCount} cityName={cityName} />
+    <MainPage
+      placesCount={placesCount}
+      cityName={cityName}
+      favoriteCount={favoriteCount}
+    />
   );
 }
 

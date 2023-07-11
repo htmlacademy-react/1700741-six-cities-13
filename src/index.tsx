@@ -1,18 +1,19 @@
+// Подчеркивает import React from 'react'; - Ошибка синтаксического анализа: не удается прочитать файл 'c:\users\user\desktop\tsconfig.json '.
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
 import {Setting} from './const';
 
-
-const containerCity = ReactDOM.createRoot(
-  document.querySelector('cities__places-container') as HTMLElement
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
 );
 
-containerCity.render(
+root.render(
   <React.StrictMode>
     <App
       cityName = {Setting.cityName}
       placesCount = {Setting.placesCount}
+      favoriteCount={Setting.favoriteCount}
     />
-  </React.StrictMode>
-)
+  </React.StrictMode>,
+);

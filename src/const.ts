@@ -1,5 +1,7 @@
+
 export const Setting = {
   placesCount: 172,
-  cityName: 'Paris'
+  cityName: "Paris",
+  favoriteCount: 3
 }
 
