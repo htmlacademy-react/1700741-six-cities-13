@@ -333,7 +333,7 @@ function OfferPage() {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
 export default OfferPage;

@@ -81,7 +81,7 @@ function MainEmptyPage() {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
 export default MainEmptyPage;

@@ -47,7 +47,7 @@ function FavoriteEmptyPage() {
         </a>
       </footer>
     </div>
-  )
+  );
 }
 
 export default FavoriteEmptyPage;

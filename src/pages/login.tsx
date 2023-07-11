@@ -1,7 +1,7 @@
 type LoginPage = {
   user: string;
   id: number;
-  password: string
+  password: string;
 }
 
 function LoginPage({user, id, password}: LoginPage): JSX.Element {
