@@ -1,18 +1,22 @@
-import MainPage from '../../pages/main';
+import LoginPage from '../../pages/login';
+// import MainPage from '../../pages/main';
+// import type { FC } from 'react';
 
-type AppProps = {
-  placesCount: number;
-  cityName: string;
-  favoriteCount: number;
-}
+// type AppProps = {
+//   placesCount: number;
+//   cityName: string;
+//   favoriteCount: number;
+// }
 
-function App({placesCount, cityName, favoriteCount}: AppProps): JSX.Element {
+// const App: FC = ({placesCount, cityName, favoriteCount}) => {
+//   return (
+//     <LoginPage />
+//   )
+// }
+
+function App(): JSX.Element {
   return (
-    <MainPage
-      placesCount={placesCount}
-      cityName={cityName}
-      favoriteCount={favoriteCount}
-    />
+    <LoginPage />
   );
 }
 

@@ -282,7 +282,7 @@ function OfferNotLogged() {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
 export default OfferNotLogged;

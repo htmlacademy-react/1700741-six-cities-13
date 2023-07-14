@@ -169,7 +169,7 @@ function FavoritePage({favoriteCount}: FavoritePage): JSX.Element {
         </a>
       </footer>
     </div>
-  )
+  );
 }
 
 export default FavoritePage;
