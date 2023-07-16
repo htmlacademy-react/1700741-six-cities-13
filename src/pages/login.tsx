@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Form from "../components/form";
 import HeaderLogo from "../components/header-logo";
 import LocationsItem from "../components/location-item";
@@ -5,6 +6,9 @@ import LocationsItem from "../components/location-item";
 function LoginPage(): JSX.Element {
   return (
     <div className="page page--gray page--login">
+      <Helmet>
+        <title>Авторизация</title>
+      </Helmet>
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
