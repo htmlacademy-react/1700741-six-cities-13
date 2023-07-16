@@ -4,6 +4,23 @@ export const Setting = {
   favoriteCount: 3,
 }
 
+export enum AppRoute {
+  Main = '/main',
+  Login = '/login',
+  Favorites = '/favorites',
+  Offer = '/offer',
+  FavoritesEmpty = '/favorites-empty',
+  MainEmpty = '/main-empty',
+  OfferNotLogged = '/offer-not-logged',
+  Root = '/'
+}
+
+export enum AuthorizationStatus {
+  Auth = 'AUTH',
+  NoAuth = 'NO_AUTH',
+  Unknown = 'UNKNOWN',
+}
+
 export const Cities = {
   Paris: 'Paris',
   Cologne: 'Cologne',
