@@ -1,6 +1,6 @@
-import LoginPage from '../../pages/login';
-// import MainPage from '../../pages/main';
-// import type { FC } from 'react';
+// import { Setting } from '../../const';
+import MainPage from '../../pages/main';
+import type { FC } from 'react';
 
 // type AppProps = {
 //   placesCount: number;
@@ -8,16 +8,14 @@ import LoginPage from '../../pages/login';
 //   favoriteCount: number;
 // }
 
-// const App: FC = ({placesCount, cityName, favoriteCount}) => {
-//   return (
-//     <LoginPage />
-//   )
-// }
-
-function App(): JSX.Element {
+const App: FC = () => {
   return (
-    <LoginPage />
-  );
+    <MainPage
+    //   placesCount = {Setting.placesCount}
+    //   cityName = {Setting.cityName}
+    //   favoriteCount = {Setting.favoriteCount}
+    />
+  )
 }
 
 export default App;

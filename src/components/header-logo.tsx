@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 
 interface HeaderLogoProps {
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
 };
 
-// Правильная ли запись?
-const HeaderLogo: FC = ({width, height}: HeaderLogoProps) => {
+
+const HeaderLogo: FC<HeaderLogoProps> = ({width, height}) => {
   return (
     <div className="header__left">
       <a className="header__logo-link header__logo-link--active">

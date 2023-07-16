@@ -4,7 +4,7 @@ interface SubmitButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttr
   label: string;
 }
 
-const SubmitButton: FC = ({label}) => {
+const SubmitButton: FC<SubmitButtonProps> = ({label}) => {
   return (
     <button className="login__submit form__submit button" type="submit">{label}</button>
   )
