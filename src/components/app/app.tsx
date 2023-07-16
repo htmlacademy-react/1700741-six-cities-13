@@ -10,6 +10,7 @@ import PrivateRoute from '../private-router';
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from '../layout';
 import NotFoundScreen from '../../pages/404';
+import LoginPage from '../../pages/login';
 
 
 // import type { FC } from 'react';
@@ -37,6 +38,7 @@ function App(): JSX.Element {
         <Routes>
           <Route path={AppRoute.Root} element={<Layout />}>
             <Route index element={<MainPage />} />
+            <Route path={AppRoute.Main} element={<MainPage />} />
             <Route path={AppRoute.Favorites}
                 element={
                   <PrivateRoute

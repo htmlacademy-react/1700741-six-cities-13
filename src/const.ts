@@ -5,14 +5,13 @@ export const Setting = {
 }
 
 export enum AppRoute {
+  Main = '/main',
   Login = '/login',
   Favorites = '/favorites',
-  Private = '/private',
   Offer = '/offer',
   FavoritesEmpty = '/favorites-empty',
   MainEmpty = '/main-empty',
   OfferNotLogged = '/offer-not-logged',
-  Result = '/result',
   Root = '/'
 }
 
