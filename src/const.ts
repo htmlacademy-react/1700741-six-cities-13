@@ -39,14 +39,15 @@ export const SortingItems = {
 
 export const PlaceCardsInfo = [
 
-  { premium: true,
+  { id: 1,
+    premium: true,
     imgSrc: 'img/apartment-01.jpg',
     price: '&euro,120',
     rating: '80%',
     title: 'Beautiful &amp, luxurious apartment at great location',
     type: 'Apartment',
   },
-  {
+  { id: 2,
     premium: false,
     imgSrc: 'img/room.jpg',
     price: '&euro,80',
@@ -54,7 +55,7 @@ export const PlaceCardsInfo = [
     title: 'Wood and stone place',
     type: 'Private room',
   },
-  {
+  { id: 3,
     premium: false,
     imgSrc: 'img/apartment-02.jpg',
     price: '&euro,132',
@@ -62,7 +63,7 @@ export const PlaceCardsInfo = [
     title: 'Canal View Prinsengracht',
     type: 'Apartment',
   },
-  {
+  { id: 4,
     premium: true,
     imgSrc: 'img/apartment-03.jpg',
     price: '&euro,180',
@@ -70,7 +71,7 @@ export const PlaceCardsInfo = [
     title: 'Nice, cozy, warm big bed apartment',
     type: 'Apartment',
   },
-  {
+  { id: 5,
     premium: false,
     imgSrc: 'img/room.jpg',
     price: '&euro,80',

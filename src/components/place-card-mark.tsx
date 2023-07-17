@@ -6,14 +6,11 @@ interface PlaceCardMarkProps {
 
 
 const PlaceCardMark: FC<PlaceCardMarkProps> = ({exist}) => {
-  // НЕ СРАБОТАЛО. ПОЧЕМУ?
-  return (
-    `
-      ${{exist}? <div className="place-card__mark">
+  if ({exist}) {return (
+    <div className="place-card__mark">
           <span>Premium</span>
-      </div> : ''}
-    `
-  )
+    </div>)
+  };
 };
 
 export default PlaceCardMark;

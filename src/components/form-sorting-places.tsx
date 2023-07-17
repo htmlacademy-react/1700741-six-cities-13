@@ -21,13 +21,13 @@ const FormSortingPlaces: FC<FormSortingPlacesProps> = ({label}) => {
         {/* ВОТ ТУТ НЕ СРАБОТАЛО ДОБАВВЛЕНИЕ КЛАССА В ЗАВИСИМОСТИ ОТ ТОГО, ВЫБРАН ЛИ ДАННЫЙ ТИП СОРТИРОВКИ */}
         {Object.entries(SortingItems).map(
             (value, index) =>
-              (<ItemSortingList label={Object.keys(SortingItems)[index]} active={Object.values(SortingItems)[index]}>
+              (<ItemSortingList key={index} label={Object.keys(SortingItems)[index]} active={Object.values(SortingItems)[index]}>
 
               </ItemSortingList>
               )
             )
           }
-        </ul>
+      </ul>
     </form>
   )
 };

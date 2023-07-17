@@ -17,7 +17,7 @@ function MainPage(): JSX.Element {
         <div className="tabs">
           <section className="locations container">
             <ul className="locations__list tabs__list">
-                {Object.values(Cities).map((city) => (<ItemLocations label={city} href="#"></ItemLocations>))}
+                {Object.values(Cities).map((city, index) => (<ItemLocations key={index} label={city} href="#"></ItemLocations>))}
             </ul>
           </section>
         </div>
