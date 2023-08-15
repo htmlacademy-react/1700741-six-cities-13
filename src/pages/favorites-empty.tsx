@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import Logo from "../components/logo";
 
 function FavoriteEmptyPage() {
   return (
@@ -19,9 +20,7 @@ function FavoriteEmptyPage() {
         </div>
       </main>
       <footer className="footer">
-        <a className="footer__logo-link" href="main.html">
-          <img className="footer__logo" src="img/logo.svg" alt="6 cities logo" width={34} height={33} />
-        </a>
+        <Logo width={34} height={33} />
       </footer>
     </div>
   );

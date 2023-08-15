@@ -1,11 +1,12 @@
 export const Setting = {
+  numberOfOfferCards: 4,
   placesCount: 172,
   cityName: 'Paris',
   favoriteCount: 3,
-}
+} as const;
 
-export enum AppRoute {
-  Main = '/main',
+export enum AppRoutes {
+  Main = '/',
   Login = '/login',
   Favorites = '/favorites',
   Offer = '/offer',
@@ -28,25 +29,18 @@ export const Cities = {
   Amsterdam: 'Amsterdam',
   Hamburg: 'Hamburg',
   Dusseldorf: 'Dusseldorf',
-}
+} as const;
 
-export const SortingItems = {
-  'Popular': true,
-  'Price: low to high': false,
-  'Price: high to low': false,
-  'Top rated first': false,
-}
-
-export const PlaceCardsInfo = [
-
-  { premium: true,
+<<<<<<< Updated upstream
+  { id: 1,
+    premium: true,
     imgSrc: 'img/apartment-01.jpg',
     price: '&euro,120',
     rating: '80%',
     title: 'Beautiful &amp, luxurious apartment at great location',
     type: 'Apartment',
   },
-  {
+  { id: 2,
     premium: false,
     imgSrc: 'img/room.jpg',
     price: '&euro,80',
@@ -54,7 +48,7 @@ export const PlaceCardsInfo = [
     title: 'Wood and stone place',
     type: 'Private room',
   },
-  {
+  { id: 3,
     premium: false,
     imgSrc: 'img/apartment-02.jpg',
     price: '&euro,132',
@@ -62,7 +56,7 @@ export const PlaceCardsInfo = [
     title: 'Canal View Prinsengracht',
     type: 'Apartment',
   },
-  {
+  { id: 4,
     premium: true,
     imgSrc: 'img/apartment-03.jpg',
     price: '&euro,180',
@@ -70,7 +64,7 @@ export const PlaceCardsInfo = [
     title: 'Nice, cozy, warm big bed apartment',
     type: 'Apartment',
   },
-  {
+  { id: 5,
     premium: false,
     imgSrc: 'img/room.jpg',
     price: '&euro,80',
@@ -79,3 +73,11 @@ export const PlaceCardsInfo = [
     type: 'Private room',
   },
 ]
+=======
+export const SortingItems = [
+  'Popular',
+  'Price: low to high',
+  'Price: high to low',
+  'Top rated first',
+ ] as const;
+>>>>>>> Stashed changes

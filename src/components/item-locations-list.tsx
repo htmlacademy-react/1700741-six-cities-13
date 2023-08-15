@@ -3,6 +3,7 @@ import { FC } from 'react';
 interface ItemLocationsProps  {
   label: string;
   href: string;
+  key: number;
 };
 
 const ItemLocations: FC<ItemLocationsProps> =({label, href}) => {

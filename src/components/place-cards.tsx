@@ -1,34 +1,19 @@
 import { FC } from 'react';
-import PlaceCardMark from './place-card-mark';
-import PlaceCardImg from './place-card-img';
-import PlaceCardPrice from './place-card-price';
-import BookmarksButton from './bookmarks-button';
-import PlaceCardRating from './place-card-rating';
-import PlaceCardName from './place-card-name';
-import PlaceCardType from './place-card-type';
-import { PlaceCardsInfo } from '../const';
 
-interface PlaceCardProps {
+import { Offers } from '../types';
+import PlaceCard from './place-card';
 
-};
+type PlaceCardsProp = {
+  offers: Offers;
+}
 
-const PlaceCards: FC<PlaceCardProps> = () => {
+
+const PlaceCards: FC<PlaceCardsProp> = ({offers}) => {
   return (
-    PlaceCardsInfo.map((value, index) => (
-      <article className="cities__card place-card">
-        <PlaceCardMark exist={PlaceCardsInfo[index].premium}></PlaceCardMark>
-        <PlaceCardImg href={PlaceCardsInfo[index].imgSrc}></PlaceCardImg>
-        <div className="place-card__info">
-          <div className="place-card__price-wrapper">
-            <PlaceCardPrice summ={PlaceCardsInfo[index].price}></PlaceCardPrice>
-            <BookmarksButton></BookmarksButton>
-          </div>
-          <PlaceCardRating rating={PlaceCardsInfo[index].rating}></PlaceCardRating>
-          <PlaceCardName label={PlaceCardsInfo[index].title}></PlaceCardName>
-          <PlaceCardType label={PlaceCardsInfo[index].type}></PlaceCardType>
-        </div>
-      </article>
-  )))
+    <div className="cities__places-list places__list tabs__content">
+      {offers.map((value, index) => (<PlaceCard key={offers[index].id} offer={value}></PlaceCard>))}
+    </div>
+  )
 };
 
 export default PlaceCards;

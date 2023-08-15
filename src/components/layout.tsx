@@ -1,5 +1,5 @@
 import {Outlet} from 'react-router-dom';
-import HeaderLogo from './header-logo';
+import Logo from './logo';
 import User from './user';
 import Sign from './sign';
 
@@ -9,7 +9,9 @@ function Layout (): JSX.Element {
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
-            <HeaderLogo width={81} height={41}></HeaderLogo>
+            <div className="header__left">
+              <Logo width={81} height={41}></Logo>
+            </div>
             <nav className="header__nav">
               <ul className="header__nav-list">
                 <User userName='Oliver.conner@gmail.com' favoriteCount={3}></User>

@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Form from "../components/form";
-import HeaderLogo from "../components/header-logo";
+import Logo from "../components/logo";
 import LocationsItem from "../components/location-item";
 
 function LoginPage(): JSX.Element {
@@ -12,7 +12,7 @@ function LoginPage(): JSX.Element {
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
-            <HeaderLogo width={81} height={41}></HeaderLogo>
+            <Logo width={81} height={41}></Logo>
           </div>
         </div>
       </header>
