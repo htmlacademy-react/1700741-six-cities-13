@@ -18,13 +18,16 @@ const FormSortingPlaces: FC<FormSortingPlacesProps> = ({label}) => {
         </svg>
       </span>
       <ul className="places__options places__options--custom places__options--opened">
-        {/* ВОТ ТУТ НЕ СРАБОТАЛО ДОБАВВЛЕНИЕ КЛАССА В ЗАВИСИМОСТИ ОТ ТОГО, ВЫБРАН ЛИ ДАННЫЙ ТИП СОРТИРОВКИ */}
-        {Object.entries(SortingItems).map(
+        {SortingItems.map(
             (value, index) =>
+<<<<<<< Updated upstream
               (<ItemSortingList key={index} label={Object.keys(SortingItems)[index]} active={Object.values(SortingItems)[index]}>
 
               </ItemSortingList>
               )
+=======
+              <ItemSortingList key={index} label={value} active></ItemSortingList>
+>>>>>>> Stashed changes
             )
           }
       </ul>

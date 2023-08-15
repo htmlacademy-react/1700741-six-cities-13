@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Cities, Setting } from '../const';
 import ItemLocations from '../components/item-locations-list';
 import TitleMainPage from '../components/title-main-page';
@@ -5,8 +6,13 @@ import FormSortingPlaces from '../components/form-sorting-places';
 import PlaceCards from '../components/place-cards';
 import CityPlacesMap from '../components/city-places-map';
 import { Helmet } from 'react-helmet-async';
+import { offers } from '../mocks/offers';
 
-function MainPage(): JSX.Element {
+type MainPageProps = {
+  numberOfOffersCards: number;
+}
+
+const MainPage: FC<MainPageProps> = ({numberOfOffersCards}) => {
   return (
     <div className="page page--gray page--main">
       <Helmet>
@@ -17,7 +23,11 @@ function MainPage(): JSX.Element {
         <div className="tabs">
           <section className="locations container">
             <ul className="locations__list tabs__list">
+<<<<<<< Updated upstream
                 {Object.values(Cities).map((city, index) => (<ItemLocations key={index} label={city} href="#"></ItemLocations>))}
+=======
+                {Object.values(Cities).map((city) => (<ItemLocations key={city} label={city} href="#"></ItemLocations>))}
+>>>>>>> Stashed changes
             </ul>
           </section>
         </div>
@@ -27,10 +37,7 @@ function MainPage(): JSX.Element {
               <h2 className="visually-hidden">Places</h2>
               <TitleMainPage placesCount={Setting.placesCount} cityName={Setting.cityName}></TitleMainPage>
               <FormSortingPlaces label="Popular"></FormSortingPlaces>
-
-              <div className="cities__places-list places__list tabs__content">
-              <PlaceCards></PlaceCards>
-              </div>
+              <PlaceCards offers={offers}></PlaceCards>
             </section>
             <CityPlacesMap></CityPlacesMap>
           </div>

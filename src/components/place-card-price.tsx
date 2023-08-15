@@ -1,10 +1,10 @@
 import { FC } from 'react';
 
 interface  PlaceCardPriceProps {
-  summ: string;
+  summ: number;
 };
 
-const PlaceCardPrice: FC<PPlaceCardPriceProps> =({summ}) => {
+const PlaceCardPrice: FC<PlaceCardPriceProps> =({summ}) => {
   return (
     <div className="place-card__price">
       <b className="place-card__price-value">{summ}</b>

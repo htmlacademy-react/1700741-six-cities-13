@@ -1,11 +1,12 @@
 export const Setting = {
+  numberOfOfferCards: 4,
   placesCount: 172,
   cityName: 'Paris',
   favoriteCount: 3,
-}
+} as const;
 
-export enum AppRoute {
-  Main = '/main',
+export enum AppRoutes {
+  Main = '/',
   Login = '/login',
   Favorites = '/favorites',
   Offer = '/offer',
@@ -28,17 +29,9 @@ export const Cities = {
   Amsterdam: 'Amsterdam',
   Hamburg: 'Hamburg',
   Dusseldorf: 'Dusseldorf',
-}
+} as const;
 
-export const SortingItems = {
-  'Popular': true,
-  'Price: low to high': false,
-  'Price: high to low': false,
-  'Top rated first': false,
-}
-
-export const PlaceCardsInfo = [
-
+<<<<<<< Updated upstream
   { id: 1,
     premium: true,
     imgSrc: 'img/apartment-01.jpg',
@@ -80,3 +73,11 @@ export const PlaceCardsInfo = [
     type: 'Private room',
   },
 ]
+=======
+export const SortingItems = [
+  'Popular',
+  'Price: low to high',
+  'Price: high to low',
+  'Top rated first',
+ ] as const;
+>>>>>>> Stashed changes

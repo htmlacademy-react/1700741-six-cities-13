@@ -1,5 +1,7 @@
+
+import type { FC } from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import { AppRoute, AuthorizationStatus } from '../../const';
+import { AppRoutes, AuthorizationStatus } from '../../const';
 import FavoritePage from '../../pages/favorites';
 import OfferPage from '../../pages/offer';
 import MainPage from '../../pages/main';
@@ -11,56 +13,45 @@ import { HelmetProvider } from 'react-helmet-async';
 import Layout from '../layout';
 import NotFoundScreen from '../../pages/404';
 import LoginPage from '../../pages/login';
+import { Comments, Offers, Users } from '../../types';
 
+type AppProps = {
+  numberOfOffersCards: number;
+  offers: Offers;
+  comments: Comments;
+  users: Users;
+}
 
-// import type { FC } from 'react';
-
-// type AppProps = {
-//   favoriteCount: number;
-// }
-
-// const App: FC = () => {
-//   return (
-//     <MainPage
-//     //   placesCount = {Setting.placesCount}
-//     //   cityName = {Setting.cityName}
-//     //   favoriteCount = {Setting.favoriteCount}
-//     />
-//   )
-// }
-
-//
-
-function App(): JSX.Element {
+const App: FC<AppProps> = ({offers}) => {
   return (
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
-          <Route path={AppRoute.Root} element={<Layout />}>
-            <Route index element={<MainPage />} />
-            <Route path={AppRoute.Main} element={<MainPage />} />
-            <Route path={AppRoute.Favorites}
+          <Route path={AppRoutes.Root} element={<Layout />}>
+            <Route index element={<MainPage numberOfOffersCards={5}/>} />
+            <Route path={AppRoutes.Main} element={<MainPage numberOfOffersCards={5}/>} />
+            <Route path={AppRoutes.Favorites}
                 element={
                   <PrivateRoute
                     authorizationStatus={AuthorizationStatus.Auth}>
-                      <FavoritePage />
+                      <FavoritePage favoriteOffers={offers}/>
                   </PrivateRoute>
                 }>
             </Route>
-            <Route path={AppRoute.FavoritesEmpty} element={<FavoriteEmptyPage />} />
-            <Route path={AppRoute.MainEmpty} element={<MainEmptyPage />} />
-            <Route path={AppRoute.Offer} element={<OfferPage />} >
-              <Route path=':id' element={<OfferPage />} />
+            <Route path={AppRoutes.FavoritesEmpty} element={<FavoriteEmptyPage />} />
+            <Route path={AppRoutes.MainEmpty} element={<MainEmptyPage />} />
+            <Route path={AppRoutes.Offer} element={<OfferPage id={1}/>} >
+              <Route path=':id' element={<OfferPage id={1}/>} />
             </Route>
-            <Route path={AppRoute.OfferNotLogged} element={<OfferNotLogged />} />
+            <Route path={AppRoutes.OfferNotLogged} element={<OfferNotLogged />} />
             <Route path="*" element={<NotFoundScreen />} />
           </Route>
           <Route
-            path={AppRoute.Login}
+            path={AppRoutes.Login}
             element={
               <PrivateRoute
-                authorizationStatus={AuthorizationStatus.Auth}>
-                  <MainPage />
+                authorizationStatus={AuthorizationStatus.NoAuth}>
+                  <LoginPage />
               </PrivateRoute>}>
           </Route>
         </Routes>
