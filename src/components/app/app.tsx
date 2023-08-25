@@ -40,8 +40,8 @@ const App: FC<AppProps> = ({offers}) => {
             </Route>
             <Route path={AppRoutes.FavoritesEmpty} element={<FavoriteEmptyPage />} />
             <Route path={AppRoutes.MainEmpty} element={<MainEmptyPage />} />
-            <Route path={AppRoutes.Offer} element={<OfferPage id={1}/>} >
-              <Route path=':id' element={<OfferPage id={1}/>} />
+            <Route path={AppRoutes.Offer} element={<OfferPage/>} >
+              <Route path=':id' element={<OfferPage/>} />
             </Route>
             <Route path={AppRoutes.OfferNotLogged} element={<OfferNotLogged />} />
             <Route path="*" element={<NotFoundScreen />} />

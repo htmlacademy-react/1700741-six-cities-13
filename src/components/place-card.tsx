@@ -14,13 +14,21 @@ type PlaceCardProp = {
 }
 
 const PlaceCard: FC<PlaceCardProp> = ({offer}) => {
-  // ВПР Почему подчеркивает isActive
   const [isActive, setIsActive] = useState(false);
+  const handleListItemHover = (event:MouseEvent<HTMLLIElement>) => {
+    event.preventDefault();
+    onListItemHover(event.currentTarget.id);
+  };
+
+  const handleListItemUnHover = (event:MouseEvent<HTMLLIElement>) => {
+    event.preventDefault();
+    onListItemUnHover(event.currentTarget.id);
+  };
 
   return (
     <article className="cities__card place-card"
-      onMouseEnter={() => setIsActive(true)}
-      onMouseLeave={() => setIsActive(false)}
+      onMouseEnter={handleListItemHover}
+      onMouseLeave={handleListItemUnHover}
     >
       <PlaceCardMark isPremium={offer.isPremium} className={"place-card__mark"}></PlaceCardMark>
       <PlaceCardImg href={offer.previewImage} width={260} height={200} className={"cities__image-wrapper"}></PlaceCardImg>
@@ -30,7 +38,7 @@ const PlaceCard: FC<PlaceCardProp> = ({offer}) => {
           <BookmarksButton label={'To bookmarks'}></BookmarksButton>
         </div>
         <PlaceCardRating rating={offer.rating}></PlaceCardRating>
-        <PlaceCardName label={offer.title} href={offer.id}></PlaceCardName>
+        <PlaceCardName label={offer.title} id={offer.id}></PlaceCardName>
         <PlaceCardType label={offer.type}></PlaceCardType>
       </div>
     </article>

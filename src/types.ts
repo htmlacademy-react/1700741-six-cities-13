@@ -59,4 +59,4 @@ type Offers = Offer[];
 
 type Comments = Comment[];
 
-export type {Offer, Offers, Comments, Comment, User, Users};
+export type {Offer, Offers, Comments, Comment, User, Users, City};

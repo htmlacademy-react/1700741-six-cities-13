@@ -20,14 +20,11 @@ const FormSortingPlaces: FC<FormSortingPlacesProps> = ({label}) => {
       <ul className="places__options places__options--custom places__options--opened">
         {SortingItems.map(
             (value, index) =>
-<<<<<<< Updated upstream
               (<ItemSortingList key={index} label={Object.keys(SortingItems)[index]} active={Object.values(SortingItems)[index]}>
 
               </ItemSortingList>
               )
-=======
-              <ItemSortingList key={index} label={value} active></ItemSortingList>
->>>>>>> Stashed changes
+
             )
           }
       </ul>

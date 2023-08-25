@@ -4,19 +4,18 @@ import OfferImgs from '../components/offer/offer-imgs';
 import PlaceCardMark from '../components/place-card-mark';
 import { offers } from '../mocks/offers';
 import OfferFormReview from '../components/offer/offer-form-review';
+import { useParams } from 'react-router-dom';
 
 interface OfferPageProps {
-  id: number
 }
 
-const OfferPage: FC<OfferPageProps> = ({id}) => {
-  // ВПР НЕ РАБОТАЕТ, НЕ ИЩЕТ ПО ID
-  // const currentOffer = offers.find(item => (item.id == id))
-  // console.log(currentOffer);
+const OfferPage: FC<OfferPageProps> = () => {
+  const id = useParams().id || '1';
 
-  const currentOffer = offers[0];
+  const currentOffer = offers.find(item => (item.id == id?.toString()));
+
   return (
-    <div key={id} className="page">
+    <div className="page">
       <Helmet>
         <title>{currentOffer.title}</title>
       </Helmet>

@@ -3,7 +3,6 @@ import type { FC } from 'react';
 interface ItemSortingListProps {
   label: string;
   active: boolean;
-  key: number;
 };
 
 
