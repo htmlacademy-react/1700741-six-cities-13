@@ -20,15 +20,12 @@ const OfferFormReview: FC = () => {
 
   const handleTxtReviewChange = (evt: ChangeEvent<HTMLTextAreaElement>) => {
     const {name, value} = evt.target;
-    setFormData({...formData,[name]:value});
-    console.log(' handleTxtReviewChange' + '  ' + formData.textReview)
+    setFormData({...formData,[name]:value})
   };
 
   const handleRatingChange = (evt: ChangeEvent<HTMLInputElement>) => {
     const {name, value} = evt.target;
     setFormData({...formData,[name]:value});
-    console.log(' handleRatingChange ' + formData.rating)
-
   };
 
   const handleSubmitClick = (evt: FormEvent<HTMLFormElement>) => {
@@ -41,7 +38,6 @@ const OfferFormReview: FC = () => {
   };
 
   return (
-    // ВПР ПОЧЕМУ РЕЙТИНГ БОЛЬШЕ НА 1? И почему не идут данные из текста комментария
     <form onSubmit={handleSubmitClick} className="reviews__form form" action="#" method="post">
       <label className="reviews__label form__label" htmlFor="review">Your review</label>
       <div  onChange={handleRatingChange} className="reviews__rating-form form__rating">
@@ -85,7 +81,7 @@ const OfferFormReview: FC = () => {
         value={formData.textReview}
         className="reviews__textarea form__textarea"
         id="review"
-        name="review"
+        name="textReview"
         placeholder="Tell how was your stay, what you like and what can be improved" >
 
         </textarea>

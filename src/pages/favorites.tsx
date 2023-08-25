@@ -1,12 +1,9 @@
 import { Helmet } from "react-helmet-async";
-<<<<<<< Updated upstream
 import Logo from "../components/logo";
-=======
 import { FC } from 'react';
 import { Offers } from "../types";
 import FavoritePlaceCards from "../components/favorites/favorite-place-cards";
 import { offers } from "../mocks/offers";
->>>>>>> Stashed changes
 
 type FavoritePageProps = {
    favoriteOffers: Offers;

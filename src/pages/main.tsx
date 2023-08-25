@@ -4,15 +4,35 @@ import ItemLocations from '../components/item-locations-list';
 import TitleMainPage from '../components/title-main-page';
 import FormSortingPlaces from '../components/form-sorting-places';
 import PlaceCards from '../components/place-cards';
-import CityPlacesMap from '../components/city-places-map';
 import { Helmet } from 'react-helmet-async';
-import { offers } from '../mocks/offers';
+import { CITY } from "../mocks/city";
+import { Offers, Offer } from "../types";
+import Map from '../components/map';
+import { useState } from 'react';
+
 
 type MainPageProps = {
-  numberOfOffersCards: number;
+  offers: Offers;
 }
 
-const MainPage: FC<MainPageProps> = ({numberOfOffersCards}) => {
+const MainPage: FC<MainPageProps> = ({offers}) => {
+
+  const [selectedPoint, setSelectedPoint] = useState<Offer | undefined>(
+    undefined
+  );
+
+  const handleListItemHover = (listItemName: string) => {
+    const currentPoint = offers.find((point) => point.id === listItemName);
+    setSelectedPoint(currentPoint);
+  };
+
+  const handleListItemUnHover = (listItemName: string) => {
+    const currentPoint = offers.find((point) => point.id === listItemName);
+    if(currentPoint){
+      setSelectedPoint(undefined);
+    }
+  };
+
   return (
     <div className="page page--gray page--main">
       <Helmet>
@@ -23,11 +43,7 @@ const MainPage: FC<MainPageProps> = ({numberOfOffersCards}) => {
         <div className="tabs">
           <section className="locations container">
             <ul className="locations__list tabs__list">
-<<<<<<< Updated upstream
                 {Object.values(Cities).map((city, index) => (<ItemLocations key={index} label={city} href="#"></ItemLocations>))}
-=======
-                {Object.values(Cities).map((city) => (<ItemLocations key={city} label={city} href="#"></ItemLocations>))}
->>>>>>> Stashed changes
             </ul>
           </section>
         </div>
@@ -37,9 +53,17 @@ const MainPage: FC<MainPageProps> = ({numberOfOffersCards}) => {
               <h2 className="visually-hidden">Places</h2>
               <TitleMainPage placesCount={Setting.placesCount} cityName={Setting.cityName}></TitleMainPage>
               <FormSortingPlaces label="Popular"></FormSortingPlaces>
-              <PlaceCards offers={offers}></PlaceCards>
+              <PlaceCards
+                offers={offers}
+                onListItemHover={handleListItemHover}
+                onListItemUnHover={handleListItemUnHover}
+                ></PlaceCards>
             </section>
-            <CityPlacesMap></CityPlacesMap>
+            <div className="cities__right-section">
+              <section className="cities__map map">
+                <Map city={CITY} points={offers} selectedPoint={selectedPoint}/>
+              </section>
+            </div>
           </div>
         </div>
       </main>
